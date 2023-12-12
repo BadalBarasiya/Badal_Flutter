@@ -3,40 +3,39 @@ member variables for radius. Include member functions to calculate the
 circle's area and circumference.*/
 
 
-#include<iostream>
+	#include <iostream>
 using namespace std;
-class circle
-   {
-    private:
-	float radius;
-     public:
-     
-     void getdata()
-	 {
-     	cout<<"\n\n\t  Enter the radius of the cirlce : "; // Function to get the radius of the circle 
-        cin>>radius;
-    	 }
-    	 
-	 void area()
-	 {
-	  float circle_area = 3.14 * radius * radius;   // Function to calculate 
-      cout << "\n\n\t  The area of the circle is " << circle_area << endl;
-     } 
-        void circumference() {
-        float circle_circumference = 2 * 3.14159 * radius;
-        cout << "\n\n\t  The circumference of the circle " << circle_circumference << endl;
+
+class Circle {
+
+    double radius;
+
+public:
+    // Constructor to initialiize  the radius
+    Circle(int r) {
+        radius = r;
     }
-	 
-	 };	
-	
-	main()
-	 {
-    circle c;
-    c.getdata(); 		//  input radius from the user
-    c.area();    		// display the area
-    c.circumference(); 
-	 }
-	 	
-	 	
-	
-	 
+
+    // Function to calculate and display 
+    void display() const {
+        double area = 3.14159 * radius * radius;
+        double circumference = 2 * 3.14159 * radius;
+
+        cout << "Area of the circle: " << area << endl; // Displaying area
+        cout << "Circumference of the circle: " << circumference << endl; // Displaying circumference
+    }
+};
+
+int main() {
+    int r;
+
+    cout << "Enter the radius of the circle: ";
+    cin >> r;
+
+    Circle C(r); // Creating a circle with the given radius
+
+    // Displaying the area and circumference using the display method
+    C.display();
+
+    return 0;
+}
