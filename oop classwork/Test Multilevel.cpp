@@ -32,7 +32,7 @@ public:
 
 class result : public students, public Test {
 public:
-    result() {} // No need for an explicit constructor here
+    result() {} 
     
     void displayResult() {
         cout << "\n\n\t Roll NO1 is " << rollno1; // Access roll numbers
